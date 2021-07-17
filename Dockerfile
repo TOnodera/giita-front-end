@@ -3,6 +3,7 @@ FROM node:14
 
 RUN apt-get update && apt-get install sudo
 RUN echo "node:node" | chpasswd && adduser node sudo
+RUN npm i -g @vue/cli
 
 WORKDIR /home/node/giita-front-end
 RUN chown -R node:node /home/node
