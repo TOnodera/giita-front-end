@@ -1,13 +1,12 @@
 <template>
   <div>
     <div class="columns">
-      <div class="column is-2">
-        <Sidebar />
+      <div class="column is-one-quarter" v-if="isShowSideMenu">
+        <Sidebar/>
       </div>
-      <div class="column is-10 main-contents">
-        <Header />
+      <div class="column is-12main-contents">
+        <Header @hamberger-clicked="menuClicked" />
         <slot></slot>
-        <Footer />
       </div>
     </div>
   </div>
@@ -17,18 +16,21 @@
 import { defineComponent } from "vue";
 import Header from "../layout/Header";
 import Sidebar from "../layout/Sidebar";
-import Footer from "../layout/Footer";
+
 export default defineComponent({
   components: {
     Header,
     Sidebar,
-    Footer
+  },
+  data() {
+    return {
+      isShowSideMenu: false,
+    };
+  },
+  methods: {
+    menuClicked() {
+      this.isShowSideMenu = !this.isShowSideMenu;
+    },
   },
 });
 </script>
-
-<style lang="scss" scoped>
-.main-contents{
-  min-height: 100vh;
-}
-</style>
