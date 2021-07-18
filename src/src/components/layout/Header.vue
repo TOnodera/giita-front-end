@@ -31,7 +31,9 @@
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link"> Github </a>
           <div class="navbar-dropdown">
-            <a class="navbar-item"> リポジトリ </a>
+            <a class="navbar-item"
+              ><router-link to="/repositories">リポジトリ</router-link></a
+            >
             <a class="navbar-item"> Jobs </a>
             <a class="navbar-item"> Contact </a>
             <hr class="navbar-divider" />

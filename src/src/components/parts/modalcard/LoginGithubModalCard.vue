@@ -32,7 +32,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import GithubLoginModal from "../Modal/LoginGithubModal.vue";
+import GithubLoginModal from "../modal/LoginGithubModal.vue";
 export default defineComponent({
   components: {
     GithubLoginModal,
