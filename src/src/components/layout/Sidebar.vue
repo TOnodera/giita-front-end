@@ -1,7 +1,6 @@
 <template>
   <aside class="menu">
     <p class="menu-label">General</p>
-    <p><fa icon="search" /></p>
     <ul class="menu-list">
       <li><a>Dashboard</a></li>
       <li><a>Customers</a></li>
