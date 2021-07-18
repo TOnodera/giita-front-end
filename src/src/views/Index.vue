@@ -1,11 +1,9 @@
 <template>
   <div>
     <Dashboard>
-      <section class="hero is-primary">
-        <div class="hero-body">
-          <h1 class="title">日々の学習をqiitaに残す</h1>
-        </div>
-      </section>
+      <template v-slot:title>
+        <h1 class="title">日々の学習をqiitaに残す</h1>
+      </template>
       <section class="section">
         <h2 class="subtitle">サイトの目的</h2>
         <p class="mt-2">
