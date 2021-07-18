@@ -1,5 +1,10 @@
 <template>
   <div>
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <slot name="title"></slot>
+      </div>
+    </section>
     <slot></slot>
   </div>
 </template>
