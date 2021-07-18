@@ -7,6 +7,7 @@
         </div>
       </section>
       <section class="section">
+        <h2 class="subtitle">サイトの目的</h2>
         <p class="mt-2">
           このサイトは日々の学習をqiitaに残しやすいようにgithubと連携してコミットやコードを簡単にコピー＆ペーストしてqiitaに投稿できることを目的に開発しました。
         </p>
@@ -29,8 +30,12 @@
               >
                 アカウントを持っていない場合は登録を行って下さい。
                 <div class="has-text-centered mt-2">
-                  <button class="button mr-5">Qiita</button>
-                  <button class="button">github</button>
+                  <button class="button mr-5" @click.stop="toQiitaSinupPage">
+                    Qiita
+                  </button>
+                  <button class="button" @click.stop="toGithubSinupPage">
+                    github
+                  </button>
                 </div>
               </div>
             </div>
@@ -94,6 +99,12 @@ export default defineComponent({
     githubLoginModalClose() {
       console.log("close");
       this.isLoginGithubButtonClicked = false;
+    },
+    toQiitaSinupPage() {
+      window.open("https://qiita.com/signup", "_blank");
+    },
+    toGithubSinupPage() {
+      window.open("http://github.com/signup", "_blank");
     },
   },
 });
