@@ -7,10 +7,22 @@
       <div class="card">
         <div class="card-content">
           <div class="content">
-            Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros.
-            Donec id elit non mi porta gravida at eget metus. Cum sociis natoque
-            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Cras mattis consectetur purus sit amet fermentum.
+            <div class="columns is-flex-direction-column">
+              <div>
+                <input
+                  class="input is-primary"
+                  type="text"
+                  placeholder="メールアドレス"
+                />
+              </div>
+              <div class="mt-2">
+                <input
+                  class="input is-primary"
+                  type="text"
+                  placeholder="パスワード"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

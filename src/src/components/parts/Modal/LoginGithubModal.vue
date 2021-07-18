@@ -3,7 +3,7 @@
     <div class="modal-background"></div>
     <div class="modal-card mt-5">
       <header class="modal-card-head">
-        <p class="modal-card-title">Modal title</p>
+        <p class="modal-card-title">github認証</p>
         <button
           class="delete"
           aria-label="close"
@@ -14,8 +14,10 @@
         <slot></slot>
       </section>
       <footer class="modal-card-foot">
-        <button class="button is-success">Save changes</button>
-        <button class="button">Cancel</button>
+        <button class="button is-success">認証</button>
+        <button class="button" @click.stop="closeButtonClicked">
+          キャンセル
+        </button>
       </footer>
     </div>
   </div>
