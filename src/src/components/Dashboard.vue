@@ -2,7 +2,7 @@
   <div>
     <section class="hero is-primary">
       <div class="hero-body">
-        <slot name="title"></slot>
+        <h1 class="title"><slot name="title"></slot></h1>
       </div>
     </section>
     <slot></slot>
