@@ -24,15 +24,14 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item"> Home </a>
-
-        <a class="navbar-item"> Documentation </a>
+        <a class="navbar-item">
+          <router-link to="/">Home</router-link>
+        </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link"> More </a>
-
+          <a class="navbar-link"> Github </a>
           <div class="navbar-dropdown">
-            <a class="navbar-item"> About </a>
+            <a class="navbar-item"> リポジトリ </a>
             <a class="navbar-item"> Jobs </a>
             <a class="navbar-item"> Contact </a>
             <hr class="navbar-divider" />
@@ -42,7 +41,7 @@
       </div>
 
       <div class="navbar-end">
-        <Hamberger @hamberger-clicked="click"/>
+        <Hamberger @hamberger-clicked="click" />
       </div>
     </div>
   </nav>
@@ -50,16 +49,16 @@
 
 <script>
 import { defineComponent } from "vue";
-import Hamberger from '../parts/Hamberger.vue';
+import Hamberger from "../parts/Hamberger.vue";
 export default defineComponent({
   name: "Header",
   components: {
-      Hamberger
+    Hamberger,
   },
   methods: {
-      click(){
-          this.$emit("hamberger-clicked");
-      }
-  }
+    click() {
+      this.$emit("hamberger-clicked");
+    },
+  },
 });
 </script>

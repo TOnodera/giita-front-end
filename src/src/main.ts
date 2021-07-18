@@ -5,6 +5,8 @@ import PirmeVue from "primevue/config";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
+import "@/assets/destyle.css";
+import "@/assets/mystyle.css";
 import "bulma/css/bulma.min.css";
 
 library.add(fas);
