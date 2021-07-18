@@ -49,13 +49,19 @@
                 アカウントがある場合はこちらのボタンでログインしてください。
                 <div class="columns">
                   <div class="column mt-2">
-                    <button class="button has-text-centered mr-5">
+                    <button
+                      class="button has-text-centered mr-5"
+                      @click.stop="loginGithubButtonClicked"
+                    >
                       github
                     </button>
                     <button class="button has-text-centered">qiita</button>
                   </div>
                 </div>
-                <modal-card />
+                <login-github-modal-card
+                  :isShow="isLoginGithubButtonClicked"
+                  @github-login-modal-close="githubLoginModalClose"
+                />
               </div>
             </div>
           </div>
@@ -68,13 +74,27 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import Dashboard from "@/components/Dashboard.vue"; // @ is an alias to /src
-import ModalCard from "@/components/parts/ModalCard.vue";
+import LoginGithubModalCard from "@/components/parts/Dialog/LoginGithubModalCard.vue";
 
 export default defineComponent({
   name: "Index",
   components: {
     Dashboard,
-    ModalCard,
+    LoginGithubModalCard,
+  },
+  data() {
+    return {
+      isLoginGithubButtonClicked: false,
+    };
+  },
+  methods: {
+    loginGithubButtonClicked() {
+      this.isLoginGithubButtonClicked = true;
+    },
+    githubLoginModalClose() {
+      console.log("close");
+      this.isLoginGithubButtonClicked = false;
+    },
   },
 });
 </script>
