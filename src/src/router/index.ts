@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import Index from "../views/Index.vue";
 import Repositories from "../views/Repositories.vue";
+import Repository from "../views/Repository.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -11,6 +12,11 @@ const routes: Array<RouteRecordRaw> = [
     path: "/repositories",
     name: "Repositories",
     component: Repositories,
+  },
+  {
+    path: "/repository/:name",
+    name: "Repository",
+    component: Repository,
   },
 ];
 
