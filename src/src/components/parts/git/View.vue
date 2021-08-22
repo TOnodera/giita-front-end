@@ -1,43 +1,33 @@
 <template>
-  <div>
-    <svg class="git-view-wrapper">
-      <node
-        :x="t * lineWidth"
-        :y="row * rowHeight"
-        color="#01d1b2"
-        v-for="t in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]"
-        :key="t"
-      />
-      <edge
-        :startX="t * lineWidth"
-        :startY="row * rowHeight"
-        :endX="t * lineWidth + lineWidth"
-        :endY="row * rowHeight"
-        v-for="t in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-        :key="t"
-      />
-    </svg>
-  </div>
+  <svg class="git-view-wrapper">
+    <Branch row="1" />
+    <Branch row="2" />
+  </svg>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import Node from "./Node.vue";
-import Edge from "./Edge.vue";
-
-const lineWidth = 50;
-const row = 1;
-const rowHeight = 50;
+import Branch from "./Branch.vue";
+import dummy from "./dummy.ts";
 
 export default defineComponent({
   components: {
-    Node,
-    Edge,
+    Branch,
   },
-  created() {
-    this.lineWidth = lineWidth;
-    this.row = row;
-    this.rowHeight = rowHeight;
+  data() {
+    return {
+      commitNums: 0,
+    };
+  },
+  methods: {
+    init() {
+      for (const commit of dummy) {
+        console.log(commit.commit);
+      }
+    },
+  },
+  mounted() {
+    this.init();
   },
 });
 </script>
@@ -45,5 +35,6 @@ export default defineComponent({
 <style scoped>
 .git-view-wrapper {
   width: 100%;
+  height: 100%;
 }
 </style>
